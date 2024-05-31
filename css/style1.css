@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    position: fixed;
+    top: 0;
+    background: #01CCD2;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 25%; 
+    z-index: 1000;
+}
+
+header .logo {
+    background-image: url('../img/logoheal1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; 
+    position: relative; 
+}
+
+header nav {
+    position: absolute; 
+    width: 55%; 
+    right: 0; 
+    top: 30px;
+    background: #01CCD2;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; 
+}
+
+
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; 
+        left: 0; 
+        top: 70px; 
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: black;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; 
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #01CCD2;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+h5{
+    font-size: 50px;
+    color: #ff0000;
+}
+
+h2 {
+    font-size: 60px;
+    color: #f04545;
+    text-align: center; 
+}
+
+p{
+    font-size: 35px;
+}
+.container {
+    display: flex;
+    margin-top: 100px; 
+}
+
+.image-container {
+    flex: 1.5;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content {
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+button {
+    background-color: #00d9ff; 
+    color: white; 
+    padding: 20px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 50px; 
+    transition: background-color 0.3s ease; 
+    margin: 0 auto; 
+}
+
+button:hover {
+    background-color: #01CCD2; 
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.text-container h3 {
+    font-size: 70px;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+.text-container div {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center; 
+}
+
+@media screen and (max-width: 1850px) {
+    .content {
+        font-size: 60px;
+    }
+
+    .text-container h3 {
+        font-size: 40px;
+    }
+
+    .text-container div {
+        font-size: 30px;
+    }
+    button {
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 20px 30px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 30px; 
+        transition: background-color 0.3s ease;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .container {
+        flex-direction: column;
+    }
+    .text-container {
+        order: 1;
+    }
+    .content {
+        font-size: 40px;
+    }
+
+    .text-container h3 {
+        font-size: 40px;
+    }
+
+    .text-container div {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .content {
+        font-size: 60px;
+    }
+
+    .text-container h3 {
+        font-size: 40px;
+    }
+
+    .text-container div {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .content {
+        font-size: 60px;
+    }
+
+    .text-container h3 {
+        font-size: 40px;
+    }
+
+    .text-container div {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        font-size: 50px;
+    }
+
+    .text-container h3 {
+        font-size: 30px;
+    }
+
+    .text-container div {
+        font-size: 25px;
+    }
+    button {
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 20px; 
+        transition: background-color 0.3s ease;
+        margin: 0 auto;
+    }
+    h2{
+        font-size: 30px;
+        color: #ff0000;
+    }
+    h5{
+        font-size: 30px;
+        color: #ff0000;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content {
+        font-size: 40px;
+    }
+
+    .text-container h3 {
+        font-size: 25px;
+    }
+
+    .text-container div {
+        font-size: 20px;
+    }
+    h2{
+        font-size: 30px;
+        color: #ff0000;
+    }
+    p{
+        font-size: 20px;
+    }
+}
+
+.cuadro {
+    background-color: #00C1C4;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+}
+.cuadro img {
+    max-width: 100%;
+    height: auto; 
+    margin-top: 20px;
+}
+.container_cuadros {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.mi-cuadro {
+    width: calc(33.33% - 20px);
+    background-color: #01ccd2;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+}
+
+.imagen-mi-cuadro {
+    width: 30%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+    .mi-cuadro {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mi-cuadro {
+        width: calc(100% - 20px);
+    }
+    h5{
+        font-size: 30px;
+        color: #ff0000;
+    }
+    p{
+        font-size: 30px;
+    }
+    
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 400px;
+    height: auto;
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 20px;
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+.card > *{
+    padding: 10px;
+}
+.card .card-image{
+    height: 500px;
+    width: 350px;
+    border: 5px double #022a3c;
+    border-radius: 10%;
+    background-position: center center;
+    background-size: cover;    
+}
+.card .card-title{
+    padding: 10px 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 1px 0px 2px #262654;
+}
+.card:nth-child(1) .card-image{
+    background-image: url(../image/Dental.jpg);
+}
+.card:nth-child(2) .card-image{
+    background-image: url(../image/Enfermeria.jpg);
+}
+.card:nth-child(3) .card-image{
+    background-image: url(../image/Farmacia.jpg);
+}
+.card:nth-child(4) .card-image{
+    background-image: url(../image/Geriatría.jpg);
+}
+.card:nth-child(5) .card-image{
+    background-image: url(../image/Inyectoterapia.jpg);
+}
+.card:nth-child(6) .card-image{
+    background-image: url(../image/Nutricion.jpg);
+}
+.card:nth-child(7) .card-image{
+    background-image: url(../image/Ambulancia.jpg);
+}
+.card:nth-child(8) .card-image{
+    background-image: url(../image/Pediatria.jpg);
+}
+.card:nth-child(9) .card-image{
+    background-image: url(../image/Conductor\ .jpg);
+}
+.card:hover{
+    background: #3edcdf;
+    color: #fff;
+    box-shadow: 0px 0px 11px 5px #000000;
+
+}
+
+.card .card-text{
+    line-height: 20px;
+    font-size: 400;
+}
+
+.boton-secundario {
+    font-size: 25px;
+    padding: 10px 20px;
+    background-color: #00d9ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background-color: #68e1f7;
+}
+
+.contact-box {
+    background-color: #01CCD2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 500px; 
+}
+
+.contact-info {
+    flex-grow: 1;
+    text-align: center;
+}
+.containerrrr {
+    text-align: center; 
+  }
+  .title {
+    color: black;
+    font-size: 20px; 
+    margin-bottom: 10px; 
+  }
+
+  .star-rating {
+    font-size: 40px;
+  }
+
+  .fa-star.checked {
+    color: gold;
+  }
+
+li{
+    font-size: 26px;
+}
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+    
+    .logo-container img {
+        max-width: 80%; 
+        height: auto; 
+    }
+    li{
+        font-size: 20px;
+    }
+}
+@media (max-width: 1700px) {
+    .logo-container img {
+        max-width: 200px; 
+    }
+}
+
+@media (max-width: 1235px) {
+    .contact-box {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .logo-container img {
+        max-width: 400px; 
+        margin-right: 0; 
+    }
+
+}

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #24c5bd;
+}
+
+.malla-curricular {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.malla-curricular h1 {
+    text-align: center;
+}
+
+.curso {
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
+.curso.visible {
+    opacity: 1; 
+}
+
+
+.curso h2 {
+    background-color: #2f00ff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.curso ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.curso li {
+    font-size: 25px;
+    background-color: #b8f5f5;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+li{
+    font-size: 25px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+button {
+    display: block; 
+    margin: 0 auto; 
+    padding: 10px 20px; 
+    background-color: #ff0000; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 30px; 
+}
+
+button:hover {
+    background-color: #00ffea; 
+}
+
+.button-link {
+    display: block; 
+    text-align: center; 
+    text-decoration: none;
+}

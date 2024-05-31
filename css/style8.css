@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+header {
+    position: fixed;
+    top: 0;
+    background: #01CCD2;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 25%; 
+    z-index: 1000;
+}
+
+header .logo {
+    background-image: url('../img/logoheal1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; 
+    position: relative; 
+}
+
+header nav {
+    position: absolute; 
+    width: 55%; 
+    right: 0; 
+    top: 30px;
+    background: #01CCD2;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; 
+}
+
+
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; 
+        left: 0; 
+        top: 70px; 
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: black;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; 
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #01CCD2;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+h1{
+    font-size: 30px;
+    color: #00ccff;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: changeBackground 15s infinite;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('../img/img1.jpg'); }
+    33% { background-image: url('../img/img2.jpg'); }
+    66% { background-image: url('../img/img3.jpg'); }
+    100% { background-image: url('../img/img4.jpg'); }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    animation: fadeIn 1.5s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.login-form {
+    position: relative;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #333;
+    animation: slideIn 1s ease-out;
+    font-size: 32px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: slideUnderline 1s ease-out;
+}
+
+@keyframes slideUnderline {
+    from {
+        width: 0;
+        left: 50%;
+    }
+    to {
+        width: 50px;
+        left: 50%;
+    }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.input-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 10px 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    color: #333;
+    font-size: 18px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #00ccff;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+    font-size: 18px;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.input-group input:focus ~ label {
+    color: #71b7e6;
+}
+.btn {
+    width: 100%;
+    background: #00b7ff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+    animation: fadeInUp 1s ease-in-out;
+    animation-delay: 0.4s;
+}
+
+.btn:hover {
+    background: #71b7e6;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 50px 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 18px;
+    }
+}
